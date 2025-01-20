@@ -1,0 +1,118 @@
+#root {
+    display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between cards */
+  margin-top: 50px;
+  padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.box {
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+.images {
+  position: relative;
+  width: calc(25% - 20px); /* Ensures four cards fit in a row */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Prevents overflow of image */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures image covers the container */
+}
+
+.images h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adds space between the old and new price */
+  margin-bottom: 15px;
+}
+
+.old-price {
+  font-size: 16px;
+  color: #777;
+  text-decoration: line-through; /* Strike-through effect */
+}
+
+.new-price {
+  font-size: 18px;
+  color: #e74c3c; /* Red color for the new price */
+  font-weight: bold;
+}
+
+.images .add-cart {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.images:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.images:hover .add-cart {
+  bottom: 0;
+  opacity: 1;
+}
+
+.add-cart:hover {
+  background-color: #f1c40f; /* Hover effect to change button color */
+  color: #333;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .images {
+    width: calc(33.33% - 20px); /* Three cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .images {
+    width: calc(50% - 20px); /* Two cards per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .images {
+    width: 100%; /* One card per row on small screens */
+  }
+}

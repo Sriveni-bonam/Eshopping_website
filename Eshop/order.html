@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Title */
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    /* Order Container */
+    .order-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative; /* Add position relative for the close button */
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Header row for products (labels) */
+    .order-header {
+      display: grid;
+      grid-template-columns: 3fr 2fr 1fr 2fr;
+      gap: 10px;
+      font-weight: bold;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .order-header h5 {
+      margin: 0;
+      text-align: left;
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Order Item rows */
+    .order-item {
+      display: grid;
+      grid-template-columns: 3fr 2fr 1fr 2fr;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .order-item span {
+      text-align: left;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .order-item-name {
+      font-weight: bold;
+    }
+
+    .order-item-price, .order-item-quantity, .order-item-total {
+      text-align: right;
+    }
+
+    .order-item-total {
+      color: #28a745; /* Green color for totals */
+      font-weight: bold;
+    }
+
+    /* Order Total Section */
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 2px solid #ddd;
+    }
+
+    .order-total h4 {
+      margin: 0;
+      color: #333;
+    }
+
+    #totalPrice {
+      font-size: 20px;
+      color: #e53935; /* Red color for the final total */
+      margin-right: 100px;
+    }
+
+    /* Empty Cart message */
+    .empty-cart {
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Order Summary</h1>
+  <div class="order-container">
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closeOrderSummary()">X</button>
+
+    <div class="order-header">
+      <h5>PRODUCT</h5>
+      <h5>PRICE</h5>
+      <h5>QUANTITY</h5>
+      <h5>TOTAL</h5>
+    </div>
+
+    <div class="order-products"></div> <!-- Products will be dynamically added here -->
+
+    <div class="order-total">
+      <h4>Total Price:</h4>
+      <span id="totalPrice">Rs.0</span> <!-- Total price will be shown here -->
+    </div>
+  </div>
+
+  <script>
+    // Retrieve the cart data stored under 'orderItems' from localStorage
+    let orderItems = localStorage.getItem('orderItems');
+    orderItems = JSON.parse(orderItems); // Convert string to object
+
+    if (orderItems) {
+      let orderContainer = document.querySelector('.order-products');
+      let totalPrice = 0; // Variable to store the total order cost
+
+      // Loop through the cart items and display them in the order summary
+      Object.values(orderItems).forEach(item => {
+        let itemTotal = item.inCart * item.price; // Calculate the total price for the item
+        totalPrice += itemTotal; // Add to the total order price
+
+        // Create an HTML element for the item and add it to the order container
+        orderContainer.innerHTML += `
+          <div class="order-item">
+            <span class="order-item-name">${item.name}</span>
+            <span class="order-item-price">Rs.${item.price}</span>
+            <span class="order-item-quantity">${item.inCart}</span>
+            <span class="order-item-total">Rs.${itemTotal}</span>
+          </div>
+        `;
+      });
+
+      // Display the total price of the order
+      document.getElementById('totalPrice').textContent = `Rs.${totalPrice}`;
+    } else {
+      document.querySelector('.order-products').innerHTML = '<p class="empty-cart">Your order is empty.</p>';
+    }
+
+    // Function to close the order summary
+    function closeOrderSummary() {
+        window.location.href='index.html' // This will close the current tab/window
+    }
+    // After successfully completing the order, clear the cart data from localStorage
+// localStorage.removeItem('orderItems');
+  </script>
+</body>
+</html>

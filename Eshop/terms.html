@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar Wishlist Counter */
+    #wishlist-count {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 5px;
+      font-size: 16px;
+      z-index: 100;
+    }
+
+    #wishlist-icon {
+      position: absolute;
+      top: 10px;
+      right: 70px; /* Adjust to fit alongside the count */
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    /* Product Container */
+    .containers, .products-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 20px; /* Adds space between cards */
+      margin-top: 50px;
+      padding-bottom: 100px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .images {
+      position: relative;
+      width: calc(25% - 20px); /* Ensures four cards fit in a row */
+      background-color: #f9f9f9; /* Light background color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      border-radius: 10px; /* Rounded corners */
+      overflow: hidden; /* Prevents overflow of image */
+      text-align: center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .images img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Ensures image covers the container */
+    }
+
+    .images h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+      color: #333;
+    }
+
+    .prices {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px; /* Adds space between the old and new price */
+      margin-bottom: 15px;
+    }
+
+    .old-price {
+      font-size: 16px;
+      color: #777;
+      text-decoration: line-through; /* Strike-through effect */
+    }
+
+    .new-price {
+      font-size: 18px;
+      color: #e74c3c; /* Red color for the new price */
+      font-weight: bold;
+    }
+
+    .images .add-cart {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .images:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    }
+
+    .images:hover .add-cart {
+      bottom: 0;
+      opacity: 1;
+    }
+
+    .add-cart:hover {
+      background-color: #e74c3c; /* Hover effect to change button color */
+      color: #333;
+    }
+
+    /* Heart and Eye Icon Positioning */
+    .icon-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column; /* Stack the icons vertically */
+      gap: 10px;
+    }
+
+    /* Square Box for Heart and Eye */
+    .icon-box {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border: 2px solid #333;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      cursor: pointer;
+    }
+
+    .icon-box:hover {
+      background-color: #f4f4f4;
+    }
+
+    .heart-icon img, .eye-icon img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Filled Heart Icon Style */
+    .heart.filled {
+      filter: brightness(0) saturate(100%) invert(23%) sepia(87%) saturate(549%) hue-rotate(340deg) brightness(99%) contrast(93%);
+      border: 5px solid #8B0000; /* Dark red border */
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    /* Wishlist Popup Styling */
+    .wishlist-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Wishlist Heart Icon -->
+  <img src="./image/heart.png" id="wishlist-icon" onclick="toggleWishlistIcon()">
+  <div id="wishlist-count">0</div>
+
+  <!-- Product Section -->
+  <h2>Products</h2>
+  <div class="containers" id="prod">
+    <!-- Product 1 -->
+    <div class="images" id="product-1">
+      <div class="icon-container">
+        <div class="icon-box heart-icon" onclick="toggleWishlist('product-1')">
+          <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+        </div>
+        <div class="icon-box eye-icon" onclick="viewProduct('product-1')">
+          <img src="./image/view.png" class="eye" alt="Eye Icon" />
+        </div>
+      </div>
+      <img src="./image/chair2.webp" alt="chair">
+      <h3>Jesse Leather | 1 seating sofa</h3>
+      <div class="prices">
+        <p class="old-price">&#8377;44,000</p>
+        <p class="new-price">&#8377;22,000</p>
+      </div>
+      <a class="add-cart cart1" href="#prod">Add Cart</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="images" id="product-2">
+      <div class="icon-container">
+        <div class="icon-box heart-icon" onclick="toggleWishlist('product-2')">
+          <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+        </div>
+        <div class="icon-box eye-icon" onclick="viewProduct('product-2')">
+          <img src="./image/view.png" class="eye" alt="Eye Icon" />
+        </div>
+      </div>
+      <img src="./image/vase1.webp" alt="vase">
+      <h3>Gold iron apple shape pot</h3>
+      <div class="prices">
+        <p class="old-price">&#8377;2299</p>
+        <p class="new-price">&#8377;1500</p>
+      </div>
+      <a class="add-cart cart2" href="#prod">Add Cart</a>
+    </div>
+
+    <!-- More Products can be added here... -->
+  </div>
+
+  <!-- Wishlist Popup -->
+  <div class="wishlist-popup" id="wishlist-popup">
+    <p id="wishlist-popup-message"></p>
+  </div>
+
+  <script>
+    // JavaScript for handling wishlist functionality
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    let wishlistCountElement = document.getElementById('wishlist-count');
+    let wishlistIcon = document.getElementById('wishlist-icon');
+    let popup = document.getElementById('wishlist-popup');
+    let popupMessage = document.getElementById('wishlist-popup-message');
+
+    // Function to toggle wishlist and update heart icon and wishlist count
+    function toggleWishlist(productId) {
+      const heartIcon = document.querySelector(`#${productId} .heart`);
+
+      if (!heartIcon) {
+        console.error("Heart icon not found for product", productId);
+        return;
+      }
+
+      if (wishlist.includes(productId)) {
+        // Remove from wishlist
+        wishlist = wishlist.filter(item => item !== productId);
+        heartIcon.src = './image/heart.png';  // Change to default heart icon
+        updateWishlistCount();
+        showPopup('Removed from wishlist!');
+      } else {
+        // Add to wishlist
+        wishlist.push(productId);
+        heartIcon.src = './image/red_heart.png';  // Change to red heart icon
+        updateWishlistCount();
+        showPopup('Added to wishlist!');
+      }
+
+      // Save wishlist to localStorage
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }
+
+    // Update wishlist count in navbar
+    function updateWishlistCount() {
+      wishlistCountElement.textContent = wishlist.length;
+    }
+
+    // Show popup message
+    function showPopup(message) {
+      popupMessage.textContent = message;
+      popup.style.display = 'block';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 2000);
+    }
+
+    // On page load, check which products are in the wishlist and update the heart icons
+    window.onload = function() {
+      wishlist.forEach(productId => {
+        const heartIcon = document.querySelector(`#${productId} .heart`);
+        if (heartIcon) {
+          heartIcon.src = './image/red_heart.png';  // Red heart icon for added items
+        }
+      });
+      updateWishlistCount();
+    }
+
+    // Placeholder function for eye button click (could open product details)
+    function viewProduct(productId) {
+      console.log("View product:", productId);
+      // Add logic to show product details in a modal or redirect to product page
+    }
+  </script>
+
+</body>
+</html>

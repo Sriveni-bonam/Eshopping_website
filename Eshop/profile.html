@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>My Profile - Exclusive E-Commerce Website</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="nav">
+    <div class="container nav_container">
+      <div class="nav_left">
+        <a href="#" class="nav_logo">EXCLUSIVE</a>
+      </div>
+      <div class="nav_items">
+       <!-- Close Button to navigate back to home page -->
+        <a href="index.html" class="close-btn" title="Close Profile">
+          <span>&times;</span> <!-- Cross Icon (×) -->
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Page Content -->
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="./image/profile-placeholder.jpg" alt="User Profile" class="profile-avatar" />
+      <div class="profile-info">
+        <h1 class="user-name">John Doe</h1>
+        <p class="user-email">johndoe@example.com</p>
+        <button class="btn btn-edit">Edit Profile</button>
+      </div>
+    </div>
+
+    <!-- Profile Sections -->
+    <div class="profile-sections">
+      <!-- Personal Information Section -->
+      <div class="profile-section">
+        <h2>Personal Information</h2>
+        <div class="info-item">
+          <label for="name">Name:</label>
+          <input type="text" id="name" value="John Doe" />
+        </div>
+        <div class="info-item">
+          <label for="email">Email:</label>
+          <input type="email" id="email" value="johndoe@example.com" />
+        </div>
+        <div class="info-item">
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" value="+1234567890" />
+        </div>
+        <button class="btn btn-save">Save Changes</button>
+      </div>
+
+      <!-- Order History Section -->
+      <div class="profile-section">
+        <h2>Order History</h2>
+        <table class="order-history">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#12345</td>
+              <td>Gaming Laptop</td>
+              <td>$1200</td>
+              <td>Shipped</td>
+              <td><a href="#">View</a></td>
+            </tr>
+            <tr>
+              <td>#12346</td>
+              <td>Wireless Mouse</td>
+              <td>$50</td>
+              <td>Delivered</td>
+              <td><a href="#">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Settings Section -->
+      <div class="profile-section">
+        <h2>Settings</h2>
+        <button class="btn btn-change-password">Change Password</button>
+        <button class="btn btn-logout">Logout</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

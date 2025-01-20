@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Home - Exclusive E-Commerce Website</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="nav">
+  <div class="container nav_container">
+    <!-- Left side with logo -->
+    <div class="nav_left">
+      <h2><a href="#" class="nav_logo">FurniGo</a></h2>
+    </div>
+
+    <!-- Right side with icons -->
+    <div class="nav_items">
+      <form action="productsearchdisplay.html" method="get" class="nav_form searchbar">
+        <input type="text" name="query" class="nav_input" id="searchBar" placeholder="search here...." />
+        <button type="submit" class="searchbutton">
+            <img src="./image/search.png" alt="" class="nav_search" />
+        </button>
+      </form>
+      
+      <!-- Cart Icon -->
+      <a href="/cart.html">
+        <img src="./image/cart.png" alt="" class="nav_cart" />
+        <span class="span">0</span> <!-- Cart count here -->
+      </a>    
+    
+      <!-- Wishlist Icon -->
+      <div class="wishlist-icon" id="wishlist-icon">
+        <img src="./image/heart.png" alt="Heart Icon" class="nav_heart" />
+        <span id="wishlist-count">0</span> <!-- Wishlist Counter -->
+      </div>
+      
+      <!-- Profile Dropdown -->
+      <div class="profile-dropdown">
+        <img src="./image/profile.png" alt="Profile" class="nav_profile" />
+        <span class="down-arrow">&#9660;</span>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="order.html">Order History</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="register.html">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Categories Below Navbar -->
+  <div class="categories-container">
+    <div class="category">
+      <div class="category-image">
+        <img src="./image/header2.jpg" alt="All" />
+      </div>
+      <div class="category-name">All</div>
+      <div class="dropdown">
+        <ul>
+          <li><a href="./productsearchdisplay.html?category=laptop">Laptop</a></li>
+          <li><a href="productsearchdisplay.html?category=mouse">Gaming mouse</a></li>
+          <li><a href="productsearchdisplay.html?category=vase">Flower vases</a></li>
+          <li><a href="productsearchdisplay.html?category=clock">Clock</a></li>
+          <li><a href="productsearchdisplay.html?category=tv">TV</a></li>
+          <li><a href="productsearchdisplay.html?category=bed">Beds</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category">
+      <div class="category-image">
+        <img src="./image/electricals.png" alt="Electrical Appliances" />
+      </div>
+      <div class="category-name">Electrical Appliances</div>
+      <div class="dropdown">
+        <ul>
+          <li><a href="productsearchdisplay.html?category=tv">TV</a></li>
+          <li><a href="productsearchdisplay.html?category=laptop">Laptop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category">
+      <div class="category-image">
+        <img src="./image/furniture.webp" alt="Furniture" />
+      </div>
+      <div class="category-name">Furniture</div>
+      <div class="dropdown">
+        <ul>
+          <li><a href="productsearchdisplay.html?category=chair">Chairs</a></li>
+          <li><a href="productsearchdisplay.html?category=sofa">Sofas</a></li>
+          <li><a href="productsearchdisplay.html?category=bed">Beds</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category">
+      <div class="category-image">
+        <img src="./image/decor.webp" alt="Home Decor" />
+      </div>
+      <div class="category-name">Home Decor</div>
+      <div class="dropdown">
+        <ul>
+          <li><a href="productsearchdisplay.html?category=vase">Flower vases</a></li>
+          <li><a href="productsearchdisplay.html?category=clock">Clocks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category">
+      <div class="category-image">
+        <img src="./image/gaming.png" alt="Gaming" />
+      </div>
+      <div class="category-name">Gaming</div>
+      <div class="dropdown">
+        <ul>
+          <li><a href="productsearchdisplay.html?category=mouse">Gaming mouse</a></li>
+          <li><a href="productsearchdisplay.html?category=laptop">Gaming Laptop</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ <!-- Swiper Section (Image Slider) -->
+ <section class="hero-slider">
+  <div class="swiper-container">
+    <!-- Swiper Wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slide 1 (Furniture Offer) -->
+      <!-- Slide 1 (Furniture Offer) -->
+<div class="swiper-slide hero" id="slide1" style="background-image: url('./image/header4.jpg')">
+<div class="container">
+  <div class="hero-content left-align">
+    <h2><p class="app-name">FurniGo</p></h2>
+    <p class="hero-subtitle">Exclusive Furniture Deals</p>
+    <h2 class="h1 hero-title">Up to 20% OFF</h2>
+    <a href="#prod"><button class="btn btn-primary">Shop Now</button></a>
+  </div>
+</div>
+</div>
+
+<!-- Slide 2 (Electrical Appliances Offer) -->
+<div class="swiper-slide hero" id="slide2" style="background-image: url('./image/header2.jpg')">
+<div class="container">
+  <div class="hero-content right-align">
+    <h2><p class="app-name">FurniGo</p></h2>
+    <p class="hero-subtitle">Top-rated electronics now</p>
+    <h2 class="h1 hero-title">Up to 50% OFF</h2>
+    <a href="#prod"><button class="btn btn-primary">Shop Now</button></a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Swiper Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+  <!-- 
+        - #SERVICE
+      -->
+
+      <section class="service">
+        <div class="container">
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./image/service-icon-1.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Free Shipping</p>
+
+                <p class="service-item-text">On All Order Over $599</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./image/service-icon-2.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Easy Returns</p>
+
+                <p class="service-item-text">30 Day Returns Policy</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./image/service-icon-3.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Secure Payment</p>
+
+                <p class="service-item-text">100% Secure Gaurantee</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./image/service-icon-4.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Special Support</p>
+
+                <p class="service-item-text">24/7 Dedicated Support</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+<!-- Product Section -->
+<h2>Products</h2>
+<div class="containers" id="prod">
+  <!-- Product 1 -->
+  <div class="images" id="product-1" data-name="product-1">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-1')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-1')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/chair2.webp" alt="chair">
+    <h3>Jesse Leather | 1 seating sofa</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;44,000</p>
+      <p class="new-price">&#8377;22,000</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="images" id="product-2" data-name="product-2">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-2')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-2')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/vase1.webp" alt="vase">
+    <h3>Gold iron apple shape pot</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;2299</p>
+      <p class="new-price">&#8377;1500</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="images" id="product-3" data-name="product-3">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-3')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-3')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/chair1.webp" alt="chair">
+    <h3>Shay Coffee Table Set</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;25,000</p>
+      <p class="new-price">&#8377;15,000</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="images" id="product-4" data-name="product-4">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-4')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-4')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/clock1.webp" alt="clock">
+    <h3>Classic & Modern Multicolour Plastic Wall Clock</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;1499</p>
+      <p class="new-price">&#8377;799</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="images" id="product-5" data-name="product-5">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-5')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-5')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/bed1.webp" alt="chair">
+    <h3>Cambert Leatherette Bed</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;95,200</p>
+      <p class="new-price">&#8377;72,100</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+
+  <!-- Product 6 -->
+  <div class="images" id="product-6" data-name="product-6">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-6')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-6')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/decor1.webp" alt="chime">
+    <h3>Wind chime</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;150</p>
+      <p class="new-price">&#8377;100</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+
+  <!-- Product 7 -->
+  <div class="images" id="product-7" data-name="product-7">
+    <div class="icon-container">
+      <div class="icon-box heart-icon" onclick="toggleWishlist('product-7')">
+        <img src="./image/heart.png" class="heart" alt="Heart Icon" />
+      </div>
+      <div class="icon-box eye-icon" onclick="viewProduct('product-7')">
+        <img src="./image/view.png" class="eye" alt="Eye Icon" />
+      </div>
+    </div>
+    <img src="./image/sofa1.webp" alt="sofa">
+    <h3>Palermo Fabric 3 Seater Sofa</h3>
+    <div class="prices">
+      <p class="old-price">&#8377;14999</p>
+      <p class="new-price">&#8377;12999</p>
+    </div>
+    <a class="add-cart cart1" href="#prod">Add Cart</a>
+  </div>
+</div>
+
+<!-- Product Previews -->
+<div class="products-preview">
+  <!-- Preview for Product 1 -->
+  <div class="preview" data-target="product-1">
+    <i class="fas fa-times"></i>
+    <img src="./image/chair2.webp" alt="Jesse Leather | 1 seating sofa">
+    <h3>Jesse Leather | 1 seating sofa</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(250)</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+    <div class="price">&#8377;22,000</div>
+    <div class="buttons">
+      <a href="#" class="buy">Buy now</a>
+      <a href="#" class="cart">Add to cart</a>
+    </div>
+  </div>
+
+  <!-- Preview for Product 2 -->
+  <div class="preview" data-target="product-2">
+    <i class="fas fa-times"></i>
+    <img src="./image/vase1.webp" alt="Gold iron apple shape pot">
+    <h3>Gold iron apple shape pot</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(250)</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+    <div class="price">&#8377;1500</div>
+    <div class="buttons">
+      <a href="#" class="buy">Buy now</a>
+      <a href="#" class="cart">Add to cart</a>
+    </div>
+  </div>
+
+  <!-- Preview for Product 3 -->
+  <div class="preview" data-target="product-3">
+    <i class="fas fa-times"></i>
+    <img src="./image/chair1.webp" alt="Shay Coffee Table Set">
+    <h3>Shay Coffee Table Set</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(250)</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+    <div class="price">&#8377;15,000</div>
+    <div class="buttons">
+      <a href="#" class="buy">Buy now</a>
+      <a href="#" class="cart">Add to cart</a>
+    </div>
+  </div>
+  <!-- Preview for Product 4 -->
+  <div class="preview" data-target="product-4">
+    <i class="fas fa-times"></i>
+    <img src="./image/clock1.webp" alt="clock">
+    <h3>Classic & Modern Multicolour Plastic Wall Clock</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(250)</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+    <div class="price">&#8377;799</div>
+    <div class="buttons">
+      <a href="#" class="buy">Buy now</a>
+      <a href="#" class="cart">Add to cart</a>
+    </div>
+  </div>
+
+  <!-- Preview for Product 5 -->
+  <div class="preview" data-target="product-5">
+    <i class="fas fa-times"></i>
+    <img src="./image/bed1.webp" alt="bed">
+    <h3>Cambert Leatherette bed</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(250)</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+    <div class="price">&#8377;72,100</div>
+    <div class="buttons">
+      <a href="#" class="buy">Buy now</a>
+      <a href="#" class="cart">Add to cart</a>
+    </div>
+  </div>
+
+  <!-- Preview for Product 6 -->
+  <div class="preview" data-target="product-6">
+    <i class="fas fa-times"></i>
+    <img src="./image/decor1.webp" alt="chime">
+    <h3>wind chime</h3>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(250)</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+    <div class="price">&#8377;100</div>
+    <div class="buttons">
+      <a href="#" class="buy">Buy now</a>
+      <a href="#" class="cart">Add to cart</a>
+    </div>
+  </div>
+ <!-- Preview for Product 7 -->
+ <div class="preview" data-target="product-7">
+  <i class="fas fa-times"></i>
+  <img src="./image/sofa1.webp" alt="Shay Coffee Table Set">
+  <h3>Palermo Fabric 3 Seater Sofa</h3>
+  <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    <span>(250)</span>
+  </div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+  <div class="price">&#8377;12,999</div>
+  <div class="buttons">
+    <a href="#" class="buy">Buy now</a>
+    <a href="#" class="cart">Add to cart</a>
+  </div>
+</div>
+</div>
+
+
+
+  <!-- Popup (Initially Hid7en) -->
+  <div id="wishlist-popup" class="wishlist-popup">
+    <p id="wishlist-popup-message"></p>
+  </div>
+  <!-- banner -->
+  <section id="banner" class="section-m1">
+    <button class="btn normal">Explore more</button>
+    </section>
+ <!-- popular brands  -->
+ <section id="categories" class="categories">
+  <h2>Our popular brands</h2>
+  <div class="category-grid">
+      <div class="categorys">
+          <img src="./image/brand1.webp" alt="off1">
+      </div>
+      <div class="categorys">
+          <img src="./image/brand2.webp" alt="off2">
+      </div>
+      <div class="categorys">
+          <img src="./image/brand3.webp" alt="off3">
+      </div>
+      <div class="categorys">
+        <img src="./image/brand6.webp" alt="off4">
+    </div>
+    <div class="categorys">
+      <img src="./image/brand4.webp" alt="off5">
+  </div>
+ 
+  </div>
+</section>
+  
+     <!-- 
+        - #NEWSLETTER
+      -->
+      <section id="newsletter" class="section-p1">
+        <div class="newstext">
+          <h4>Sign Up for Newsletters</h4>
+          <p>Get Email updates about our latest shop and <span> special offers.</span> </p>
+        </div>
+          <div class="form">
+          <input type="text" placeholder="Your email address">
+             <button class="btn normals">Sign Up</button>
+          </div>
+         
+        </div>
+        
+      </section>
+      
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">bag</a></li>
+            <li><a href="#">shoes</a></li>
+            <li><a href="#">dress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+        </ul>
+
+        <div class="payment">
+          <p class="payment-title">We Support</p>
+
+          <img src="./image/payment-img.png" alt="Online payment logos" class="payment-img">
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="./js/productsearchdisplay.js"></script>
+  <script src="./js/cart.js"></script>
+  <script src="./js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
